@@ -21,6 +21,7 @@ namespace Kalkulator
 		string text = "0";
 		bool isOperator = false;
 		bool isDot = false;
+		bool isMinus = false;
 		char whatOperator;
 
 		public MainWindow()
@@ -154,6 +155,11 @@ namespace Kalkulator
 		{
 			if (isOperator == true && text[text.Length - 1] != '+' && text[text.Length - 1] != '-' && text[text.Length - 1] != '*' && text[text.Length - 1] != '/')
 			{
+				if(isMinus==true)
+				{
+					text = text.Remove(0, 1);
+				}
+
 				char[] spearator = { '+', '-', '*', '/' };
 				String[] numbers = text.Split(spearator);
 				double num1, num2;
@@ -162,6 +168,11 @@ namespace Kalkulator
 				Double.TryParse(numbers[0], out num1);
 				Double.TryParse(numbers[1], out num2);
 				double? result = null;
+
+				if(isMinus == true)
+				{
+					num1 = -num1;
+				}
 
 				switch (whatOperator)
 				{
@@ -190,6 +201,11 @@ namespace Kalkulator
 
 				if (result != null)
 				{
+					if (result < 0)
+						isMinus = true;
+					else
+						isMinus = false;
+
 					result = Math.Round(Convert.ToDouble(result), 5, MidpointRounding.ToEven);
 					text = Convert.ToString(result);
 					text = text.Replace(',', '.');
@@ -303,6 +319,24 @@ namespace Kalkulator
 		private void Button_Equal(object sender, RoutedEventArgs e)
 		{
 			Equal();
+		}
+
+		private void Button_Change(object sender, RoutedEventArgs e)
+		{
+			if (isOperator == false)
+			{
+				if(isMinus==true)
+				{
+					text = text.Remove(0, 1);
+					isMinus = false;
+				}
+				else
+				{
+					text = "-" + text;
+					isMinus = true;
+				}
+				Update_Text();
+			}
 		}
 	}
 }

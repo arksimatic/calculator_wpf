@@ -12,10 +12,11 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
@@ -40,13 +41,14 @@
         <Button Grid.ColumnSpan="1" Grid.Row="4" Grid.Column= "0" Click="Button_OneDelete">C</Button>
         <Button Grid.ColumnSpan="1" Grid.Row="4" Grid.Column= "2" Click="Button_AllDelete">CE</Button>
 
-        <Button Grid.ColumnSpan="1" Grid.Row="1" Grid.Column= "3" Click="Button_Add">+</Button>
-        <Button Grid.ColumnSpan="1" Grid.Row="2" Grid.Column= "3" Click="Button_Sub">-</Button>
-        <Button Grid.ColumnSpan="1" Grid.Row="3" Grid.Column= "3" Click="Button_Mult">*</Button>
-        <Button Grid.ColumnSpan="1" Grid.Row="4" Grid.Column= "3" Click="Button_Div">/</Button>
+        <Button Grid.ColumnSpan="1" Grid.Row="5" Grid.Column= "0" Click="Button_Add">+</Button>
+        <Button Grid.ColumnSpan="1" Grid.Row="6" Grid.Column= "0" Click="Button_Sub">-</Button>
+        <Button Grid.ColumnSpan="1" Grid.Row="5" Grid.Column= "2" Click="Button_Mult">*</Button>
+        <Button Grid.ColumnSpan="1" Grid.Row="6" Grid.Column= "2" Click="Button_Div">/</Button>
 
-        <Button Grid.ColumnSpan="1" Grid.Row="0" Grid.Column= "2" Click="Button_Equal">=</Button>
-        <Button Grid.ColumnSpan="1" Grid.Row="0" Grid.Column= "3" Click="Button_Dot">.</Button>
+        <Button Grid.ColumnSpan="1" Grid.Row="5" Grid.Column= "1" Click="Button_Equal">=</Button>
+        <Button Grid.ColumnSpan="1" Grid.Row="6" Grid.Column= "1" Click="Button_Dot">.</Button>
+        <Button Grid.ColumnSpan="1" Grid.Row="0" Grid.Column= "2" Click="Button_Change">+/-</Button>
 
     </Grid>
 </Window>
